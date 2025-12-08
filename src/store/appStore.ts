@@ -14,3 +14,4 @@ export const useAppStore = create<AppState>((set) => ({
   setNotificationsEnabled: (enabled) => set({ notificationsEnabled: enabled }),
 }));
 
+
