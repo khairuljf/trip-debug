@@ -3,6 +3,7 @@ import ParallaxScrollView from '@/src/components/parallax-scroll-view';
 import { ThemedText } from '@/src/components/themed-text';
 import { ThemedView } from '@/src/components/themed-view';
 import { useAuthStore } from '@/src/store/authStore';
+import Constants from "expo-constants";
 import { Image } from 'expo-image';
 import { Link } from 'expo-router';
 import { Platform, StyleSheet } from 'react-native';
@@ -10,6 +11,8 @@ import '../../global.css';
 
 export default function HomeScreen() {
   const user = useAuthStore((state) => state.user);
+
+  console.log('from constants', Constants?.expoConfig?.extra)
 
   return (
     <ParallaxScrollView
