@@ -1,7 +1,17 @@
+<<<<<<< HEAD
 import * as dotenv from "dotenv";
 dotenv.config();
 
 export default ({ config }) => ({
+=======
+import * as dotenv from 'dotenv';
+import { ConfigContext, ExpoConfig } from 'expo/config';
+dotenv.config();
+
+
+
+export default ({ config }: ConfigContext): ExpoConfig => ({
+>>>>>>> bb7d501 (fix: restore file from pre repo)
   ...config,
   name: "trip-debug",
   slug: "trip-debug",
@@ -49,6 +59,7 @@ export default ({ config }) => ({
     reactCompiler: true,
   },
   extra: {
+<<<<<<< HEAD
     FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
     FIREBASE_AUTH_DOMAIN: process.env.FIREBASE_AUTH_DOMAIN,
     FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID,
@@ -56,6 +67,19 @@ export default ({ config }) => ({
     FIREBASE_MESSAGING_SENDER_ID: process.env.FIREBASE_MESSAGING_SENDER_ID,
     FIREBASE_APP_ID: process.env.FIREBASE_APP_ID,
     router: {},
+=======
+    ...config.extra,
+    router: {},
+    firebase: {
+        apiKey: process.env.FIREBASE_API_KEY,
+        authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+        projectId: process.env.FIREBASE_PROJECT_ID,
+        storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+        messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+        appId: process.env.FIREBASE_APP_ID,
+      },
+      
+>>>>>>> bb7d501 (fix: restore file from pre repo)
     eas: {
       projectId: "eda9d31d-8141-41ff-9720-fdf9bed2839d",
     },
